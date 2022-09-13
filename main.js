@@ -24,9 +24,6 @@ recognition.onresult = function(event) {
 }
 
 function setup() {
-
-    canvas = createCanvas(550,500);
-    canvas.position(560,150);
 }
 
 function draw() {
@@ -34,6 +31,13 @@ function draw() {
   {
     document.getElementById("status").innerHTML = to_number + " Apples drawn";
     draw_apple = "";
+    speak_data = to_number + "Apples drawn";
+    speak();
+    for(var i =1; i<= to_number;i++){
+      x = Math.floor(Math.random() *700);
+      y = Math.floor(Math.random() *400);
+      image(apple,x,y,50,50);
+    }
   }
 }
 
